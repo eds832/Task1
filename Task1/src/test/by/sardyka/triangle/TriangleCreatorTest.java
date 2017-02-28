@@ -88,8 +88,7 @@ public class TriangleCreatorTest {
 		ArrayList<double[]> pars = null;
 		try {
 			TriangleCreator.creatTriangle(pars);
-			fail("parsTriangleCreatorExeption1Test for parsDate = " + pars
-					+ " should have thrown a WrongDataException");
+			fail("parsTriangleCreatorExeption1Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}
@@ -100,8 +99,7 @@ public class TriangleCreatorTest {
 		ArrayList<double[]> pars = new ArrayList<>();
 		try {
 			TriangleCreator.creatTriangle(pars);
-			fail("parsTriangleCreatorExeption2Test for parsDate = " + pars
-					+ " should have thrown a WrongDataException");
+			fail("parsTriangleCreatorExeption2Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}
