@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -80,7 +81,7 @@ public class DataWriterTest {
 	}
 
 	@Test
-	public void writeStringDataTest() throws FileNotFoundException {
+	public void writeStringDataTest() throws FileNotFoundException, NoSuchElementException {
 		boolean expected = true;
 		DataWriter.writeData(input, file.getAbsolutePath());
 		Scanner sc = new Scanner(file);
@@ -101,7 +102,7 @@ public class DataWriterTest {
 	}
 
 	@Test
-	public void writeTriangleDataTest() throws FileNotFoundException {
+	public void writeTriangleDataTest() throws FileNotFoundException, NoSuchElementException {
 		boolean expected = true;
 		DataWriter.writeData(tr, file.getAbsolutePath());
 		Scanner sc = new Scanner(file);

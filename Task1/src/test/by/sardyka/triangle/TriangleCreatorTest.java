@@ -75,7 +75,7 @@ public class TriangleCreatorTest {
 	}
 
 	@Test
-	public void creatTriangleTest() throws WrongDataException {
+	public void creatTriangleTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
 		boolean expected = true;
 		tr = TriangleCreator.creatTriangle(parsDate);
 		boolean actual = tr.get(0).toString().equals(tr1.toString())
