@@ -64,14 +64,14 @@ public class LogicTest {
 	public void logicIsRectagonalTest() {
 		boolean expected = isRectagonal;
 		boolean actual = Logic.isRectagonal(tr);
-		assertEquals("Logic.isRectagonal", expected, actual);
+		assertEquals("Logic.isRectagonal works incorrectly", expected, actual);
 	}
 
 	@Test
 	public void logicIsTriangleTest() {
 		boolean expected = isTriangle;
 		boolean actual = Logic.isTriangle(tr);
-		assertEquals("Logic.isTriangle", expected, actual);
+		assertEquals("Logic.isTriangle works incorrectly", expected, actual);
 	}
 
 }

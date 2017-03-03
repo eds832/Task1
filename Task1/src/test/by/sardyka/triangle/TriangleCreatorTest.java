@@ -82,7 +82,7 @@ public class TriangleCreatorTest {
 		TriangleCreator.creatTriangle(parsDate);
 		boolean actual = tr.get(0).toString().equals(tr1.toString())
 				&& tr.get(1).toString().equals(tr2.toString());
-		assertEquals("DataParser works incorrectly", expected, actual);
+		assertEquals("TriangleCreator works incorrectly", expected, actual);
 	}
 
 	@Test
