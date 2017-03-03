@@ -7,8 +7,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
 public class DataParser {
-	private final static double MAX_VALUE = 10000.0;
-	private final static String REG = "\\s+";
+	private static final double MAX_VALUE = 10000.0;
+	private static final String REG = "\\s+";
 	private static final Logger LOG = LogManager.getLogger(DataParser.class);
 
 	public static ArrayList<double[]> parsData(ArrayList<String> strList) throws WrongDataException {

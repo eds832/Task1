@@ -16,7 +16,7 @@ public class TriangleCreator {
 	private static final int SIZE = 6;
 	private static final Logger LOG = LogManager.getLogger(TriangleCreator.class);
 
-	public static ArrayList<Triangle> creatTriangle(ArrayList<double[]> parsDate) throws WrongDataException {
+	public static void creatTriangle(ArrayList<double[]> parsDate) throws WrongDataException {
 		Performer performer = Performer.getInstance();
 		ArrayList<Triangle> arrayTriangle = performer.getArrayTriangle();
 		if ((parsDate == null) || (parsDate.isEmpty())) {
@@ -39,7 +39,6 @@ public class TriangleCreator {
 			}
 		}
 		LOG.log(Level.INFO, "There are " + arrayTriangle.size() + " triangles");
-		return arrayTriangle;
 	}
 
 }

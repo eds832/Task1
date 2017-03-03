@@ -52,7 +52,7 @@ public class Performer {
 		boolean b3 = true;
 		if (!b1) {
 			try {
-				arrayTriangle = TriangleCreator.creatTriangle(parsDate);
+				TriangleCreator.creatTriangle(parsDate);
 			} catch (WrongDataException e) {
 				LOG.log(Level.WARN, e);
 			}

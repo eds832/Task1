@@ -58,7 +58,9 @@ public class TriangleCreatorTest {
 		parsDate.add(m1);
 		parsDate.add(m2);
 		parsDate.add(m3);
-		tr = Performer.getInstance().getArrayTriangle();
+		Performer instance = Performer.getInstance();
+		tr = instance.getArrayTriangle();
+		Performer.getInstance().getArrayTriangle();
 		tr.clear();
 	}
 
@@ -77,7 +79,7 @@ public class TriangleCreatorTest {
 	@Test
 	public void creatTriangleTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
 		boolean expected = true;
-		tr = TriangleCreator.creatTriangle(parsDate);
+		TriangleCreator.creatTriangle(parsDate);
 		boolean actual = tr.get(0).toString().equals(tr1.toString())
 				&& tr.get(1).toString().equals(tr2.toString());
 		assertEquals("DataParser works incorrectly", expected, actual);
