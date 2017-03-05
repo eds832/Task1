@@ -11,7 +11,7 @@ public class DataParser {
 	private static final String REG = "\\s+";
 	private static final Logger LOG = LogManager.getLogger(DataParser.class);
 
-	public static ArrayList<double[]> parsData(ArrayList<String> strList) throws WrongDataException {
+	public static ArrayList<double[]> parseData(ArrayList<String> strList) throws WrongDataException {
 		ArrayList<double[]> masList = new ArrayList<double[]>();
 		if ((strList == null) || (strList.isEmpty())) {
 			throw new WrongDataException("This datafile is empty or doesn't exist");
@@ -27,12 +27,12 @@ public class DataParser {
 					d = Double.parseDouble(strMas[i]);
 				} catch (NumberFormatException e) {
 					b = false;
-					LOG.log(Level.DEBUG, "This datafile contain the wrong String = " + strMas[i]);
+					LOG.log(Level.DEBUG, "This datafile contains the wrong String = " + strMas[i]);
 				}
 				if (d != null) {
 					if (Math.abs(d) > MAX_VALUE) {
 						b = false;
-						LOG.log(Level.DEBUG, "This datafile contain the wrong double d = " + d);
+						LOG.log(Level.DEBUG, "This datafile contains the wrong double d = " + d);
 					}
 					doubleMas[i] = d;
 				}

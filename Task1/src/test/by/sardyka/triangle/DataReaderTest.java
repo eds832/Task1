@@ -1,6 +1,6 @@
 package test.by.sardyka.triangle;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -59,19 +59,17 @@ public class DataReaderTest {
 
 	@Test
 	public void readDataTest()  throws IndexOutOfBoundsException, NullPointerException{
-		boolean expected = true;
 		ArrayList<String> list = DataReader.readData(file1.getAbsolutePath());
 		String s = list.get(0) + "\n" + list.get(1) + "\n" + list.get(2);
 		boolean actual = s.equals(input);
-		assertEquals("DataReader reads incorrectly", expected, actual);
+		assertTrue("DataReader reads incorrectly", actual);
 	}
 
 	@Test
 	public void readEmptyDataTest() throws NullPointerException{
-		boolean expected = true;
 		ArrayList<String> list = DataReader.readData(file2.getAbsolutePath());
 		boolean actual = list.size() == 0;
-		assertEquals("DataReader reads empty file incorrectly", expected, actual);
+		assertTrue("DataReader reads empty file incorrectly", actual);
 	}
 
 }

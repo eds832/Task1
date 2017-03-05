@@ -1,6 +1,6 @@
 package test.by.sardyka.triangle;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -82,28 +82,25 @@ public class DataWriterTest {
 
 	@Test
 	public void writeStringDataTest() throws FileNotFoundException, NoSuchElementException {
-		boolean expected = true;
 		DataWriter.writeData(input, file.getAbsolutePath());
 		Scanner sc = new Scanner(file);
 		String s = sc.nextLine();
 		sc.close();
 		boolean actual = s.equals(input);
-		assertEquals("DataWriter writes a string incorrectly", expected, actual);
+		assertTrue("DataWriter writes a string incorrectly", actual);
 	}
 
 	@Test
 	public void writeEmptyDataTest() throws FileNotFoundException {
-		boolean expected = true;
 		DataWriter.writeData("", file.getAbsolutePath());
 		Scanner sc = new Scanner(file);
 		boolean actual = !sc.hasNextLine();
 		sc.close();
-		assertEquals("DataWriter writes empty data incorrectly", expected, actual);
+		assertTrue("DataWriter writes empty data incorrectly", actual);
 	}
 
 	@Test
 	public void writeTriangleDataTest() throws FileNotFoundException, NoSuchElementException {
-		boolean expected = true;
 		DataWriter.writeData(tr, file.getAbsolutePath());
 		Scanner sc = new Scanner(file);
 		String s = sc.nextLine() + "\n" + sc.nextLine() + "\n" + sc.nextLine() + "\n" + sc.nextLine() + "\n"
@@ -111,7 +108,7 @@ public class DataWriterTest {
 		sc.close();
 		String str = tr.get(0).toString() + "\n" + tr.get(1).toString() + "\n";
 		boolean actual = s.equals(str);
-		assertEquals("DataWriter writes triangles data incorrectly", expected, actual);
+		assertTrue("DataWriter writes triangles data incorrectly", actual);
 	}
 
 }

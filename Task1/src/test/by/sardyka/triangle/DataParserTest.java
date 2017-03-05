@@ -1,6 +1,7 @@
 package test.by.sardyka.triangle;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,9 +68,8 @@ public class DataParserTest {
 	}
 
 	@Test
-	public void parsDateTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
-		boolean expected = true;
-		ArrayList<double[]> masList = DataParser.parsData(ar1);
+	public void parseDateTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
+		ArrayList<double[]> masList = DataParser.parseData(ar1);
 		boolean b1 = ar2.size() == masList.size();
 		boolean b2 = masList.get(0).length == ar2.get(0).length;
 		boolean b3 = masList.get(0)[0] == ar2.get(0)[0];
@@ -86,26 +86,26 @@ public class DataParserTest {
 		boolean b14 = masList.get(1)[4] == ar2.get(1)[4];
 		boolean b15 = masList.get(1)[5] == ar2.get(1)[5];
 		boolean actual = b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9 && b10 && b11 && b12 && b13 && b14 && b15;
-		assertEquals("DataParser works incorrectly", expected, actual);
+		assertTrue("DataParser works incorrectly", actual);
 	}
 
 	@Test
-	public void parsDataExeption1Test() {
+	public void parseDataExeption1Test() {
 		ArrayList<String> ar = null;
 		try {
-			DataParser.parsData(ar);
-			fail("parsDataExeptionTest for strList should have thrown a WrongDataException");
+			DataParser.parseData(ar);
+			fail("parseDataExeptionTest for strList should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile is empty or doesn't exist", e.getMessage());
 		}
 	}
 
 	@Test
-	public void parsDataExeption2Test() {
+	public void parseDataExeption2Test() {
 		ArrayList<String> ar = new ArrayList<>();
 		try {
-			DataParser.parsData(ar);
-			fail("parsDataExeptionTest for strList should have thrown a WrongDataException");
+			DataParser.parseData(ar);
+			fail("parseDataExeptionTest for strList should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile is empty or doesn't exist", e.getMessage());
 		}

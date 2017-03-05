@@ -16,13 +16,13 @@ public class TriangleCreator {
 	private static final int SIZE = 6;
 	private static final Logger LOG = LogManager.getLogger(TriangleCreator.class);
 
-	public static void creatTriangle(ArrayList<double[]> parsDate) throws WrongDataException {
+	public static void creatTriangle(ArrayList<double[]> parsedData) throws WrongDataException {
 		Performer performer = Performer.getInstance();
 		ArrayList<Triangle> arrayTriangle = performer.getArrayTriangle();
-		if ((parsDate == null) || (parsDate.isEmpty())) {
+		if ((parsedData == null) || (parsedData.isEmpty())) {
 			throw new WrongDataException("This datafile doesn't contain doubles");
 		}
-		for (double[] d : parsDate) {
+		for (double[] d : parsedData) {
 			if (d.length != SIZE) {
 				LOG.log(Level.DEBUG, "The number of doubles is wrong n = " + d.length);
 				continue;
@@ -33,7 +33,7 @@ public class TriangleCreator {
 			Triangle triangle = new Triangle(p1, p2, p3);
 			boolean b = Logic.isTriangle(triangle);
 			if (!b) {
-				LOG.log(Level.DEBUG, "It isn't a triangle:\n\t" + p1 + " "+ p2 + " "+ p3);
+				LOG.log(Level.DEBUG, "  It isn't a triangle:\n" + p1 + " "+ p2 + " "+ p3);
 			} else {
 				arrayTriangle.add(triangle);
 			}

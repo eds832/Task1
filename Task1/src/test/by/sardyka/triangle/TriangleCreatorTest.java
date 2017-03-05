@@ -1,6 +1,7 @@
 package test.by.sardyka.triangle;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class TriangleCreatorTest {
 	private double[] m3;
 	private Triangle tr1;
 	private Triangle tr2;
-	private ArrayList<double[]> parsDate;
+	private ArrayList<double[]> parsedData;
 	private ArrayList<Triangle> tr;
 
 	public TriangleCreatorTest(double[] m1, double[] m2, double[] m3, Triangle tr1, Triangle tr2) {
@@ -54,10 +55,10 @@ public class TriangleCreatorTest {
 
 	@Before
 	public void initTriangleCreator() {
-		parsDate = new ArrayList<>();
-		parsDate.add(m1);
-		parsDate.add(m2);
-		parsDate.add(m3);
+		parsedData = new ArrayList<>();
+		parsedData.add(m1);
+		parsedData.add(m2);
+		parsedData.add(m3);
 		Performer instance = Performer.getInstance();
 		tr = instance.getArrayTriangle();
 		Performer.getInstance().getArrayTriangle();
@@ -71,37 +72,36 @@ public class TriangleCreatorTest {
 		m3 = null;
 		tr1 = null;
 		tr2 = null;
-		parsDate = null;
+		parsedData = null;
 		tr.clear();
 		tr = null;
 	}
 
 	@Test
 	public void creatTriangleTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
-		boolean expected = true;
-		TriangleCreator.creatTriangle(parsDate);
+		TriangleCreator.creatTriangle(parsedData);
 		boolean actual = tr.get(0).toString().equals(tr1.toString())
 				&& tr.get(1).toString().equals(tr2.toString());
-		assertEquals("TriangleCreator works incorrectly", expected, actual);
+		assertTrue("TriangleCreator works incorrectly", actual);
 	}
 
 	@Test
-	public void parsTriangleCreatorExeption1Test() {
+	public void parseTriangleCreatorExeption1Test() {
 		ArrayList<double[]> pars = null;
 		try {
 			TriangleCreator.creatTriangle(pars);
-			fail("parsTriangleCreatorExeption1Test for pars should have thrown a WrongDataException");
+			fail("parseTriangleCreatorExeption1Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}
 	}
 
 	@Test
-	public void parsTriangleCreatorExeption2Test() {
+	public void parseTriangleCreatorExeption2Test() {
 		ArrayList<double[]> pars = new ArrayList<>();
 		try {
 			TriangleCreator.creatTriangle(pars);
-			fail("parsTriangleCreatorExeption2Test for pars should have thrown a WrongDataException");
+			fail("parseTriangleCreatorExeption2Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}

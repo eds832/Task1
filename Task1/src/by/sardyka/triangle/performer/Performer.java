@@ -41,18 +41,18 @@ public class Performer {
 		LOG.log(Level.INFO, "Start");
 		String sys = System.getProperty(USER_DIR);
 		ArrayList<String> strList = DataReader.readData(sys + INPUT);
-		ArrayList<double[]> parsDate = null;
+		ArrayList<double[]> parsedDate = null;
 		try {
-			parsDate = DataParser.parsData(strList);
+			parsedDate = DataParser.parseData(strList);
 		} catch (WrongDataException e) {
 			LOG.log(Level.WARN, e);
 		}
-		boolean b1 = parsDate == null;
+		boolean b1 = parsedDate == null;
 		boolean b2 = true;
 		boolean b3 = true;
 		if (!b1) {
 			try {
-				TriangleCreator.creatTriangle(parsDate);
+				TriangleCreator.creatTriangle(parsedDate);
 			} catch (WrongDataException e) {
 				LOG.log(Level.WARN, e);
 			}
