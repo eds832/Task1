@@ -87,7 +87,7 @@ public class DataWriterTest {
 		String s = sc.nextLine();
 		sc.close();
 		boolean actual = s.equals(input);
-		assertTrue("DataWriter writes a string incorrectly", actual);
+		assertTrue("writeData writes a string incorrectly", actual);
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class DataWriterTest {
 		Scanner sc = new Scanner(file);
 		boolean actual = !sc.hasNextLine();
 		sc.close();
-		assertTrue("DataWriter writes empty data incorrectly", actual);
+		assertTrue("writeData writes empty data incorrectly", actual);
 	}
 
 	@Test
@@ -108,7 +108,7 @@ public class DataWriterTest {
 		sc.close();
 		String str = tr.get(0).toString() + "\n" + tr.get(1).toString() + "\n";
 		boolean actual = s.equals(str);
-		assertTrue("DataWriter writes triangles data incorrectly", actual);
+		assertTrue("writeData writes triangles data incorrectly", actual);
 	}
 
 }

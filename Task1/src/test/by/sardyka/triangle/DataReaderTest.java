@@ -62,14 +62,14 @@ public class DataReaderTest {
 		ArrayList<String> list = DataReader.readData(file1.getAbsolutePath());
 		String s = list.get(0) + "\n" + list.get(1) + "\n" + list.get(2);
 		boolean actual = s.equals(input);
-		assertTrue("DataReader reads incorrectly", actual);
+		assertTrue("readData reads incorrectly", actual);
 	}
 
 	@Test
 	public void readEmptyDataTest() throws NullPointerException{
 		ArrayList<String> list = DataReader.readData(file2.getAbsolutePath());
 		boolean actual = list.size() == 0;
-		assertTrue("DataReader reads empty file incorrectly", actual);
+		assertTrue("readData reads empty file incorrectly", actual);
 	}
 
 }

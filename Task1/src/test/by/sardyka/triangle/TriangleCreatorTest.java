@@ -81,26 +81,26 @@ public class TriangleCreatorTest {
 		TriangleCreator.createTriangle(parsedData);
 		boolean actual = tr.get(0).toString().equals(tr1.toString())
 				&& tr.get(1).toString().equals(tr2.toString());
-		assertTrue("TriangleCreator works incorrectly", actual);
+		assertTrue("createTriangle works incorrectly", actual);
 	}
 
 	@Test
-	public void parseTriangleCreatorException1Test() {
+	public void createTriangleException1Test() {
 		ArrayList<double[]> pars = null;
 		try {
 			TriangleCreator.createTriangle(pars);
-			fail("parseTriangleCreatorExeption1Test for pars should have thrown a WrongDataException");
+			fail("createTriangleExeption1Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}
 	}
 
 	@Test
-	public void parseTriangleCreatorException2Test() {
+	public void createTriangleException2Test() {
 		ArrayList<double[]> pars = new ArrayList<>();
 		try {
 			TriangleCreator.createTriangle(pars);
-			fail("parseTriangleCreatorExeption2Test for pars should have thrown a WrongDataException");
+			fail("createTriangleExeption2Test for pars should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
 			assertEquals("This datafile doesn't contain doubles", e.getMessage());
 		}

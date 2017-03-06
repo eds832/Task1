@@ -86,28 +86,28 @@ public class DataParserTest {
 		boolean b14 = masList.get(1)[4] == ar2.get(1)[4];
 		boolean b15 = masList.get(1)[5] == ar2.get(1)[5];
 		boolean actual = b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9 && b10 && b11 && b12 && b13 && b14 && b15;
-		assertTrue("DataParser works incorrectly", actual);
+		assertTrue("parseData works incorrectly", actual);
 	}
 
 	@Test
 	public void parseDataException1Test() {
-		ArrayList<String> ar = null;
+		ArrayList<String> strList = null;
 		try {
-			DataParser.parseData(ar);
+			DataParser.parseData(strList);
 			fail("parseDataExeptionTest for strList should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
-			assertEquals("This datafile is empty or doesn't exist", e.getMessage());
+			assertEquals("This data file is empty or doesn't exist", e.getMessage());
 		}
 	}
 
 	@Test
 	public void parseDataException2Test() {
-		ArrayList<String> ar = new ArrayList<>();
+		ArrayList<String> strList = new ArrayList<>();
 		try {
-			DataParser.parseData(ar);
+			DataParser.parseData(strList);
 			fail("parseDataExeptionTest for strList should have thrown a WrongDataException");
 		} catch (WrongDataException e) {
-			assertEquals("This datafile is empty or doesn't exist", e.getMessage());
+			assertEquals("This data file is empty or doesn't exist", e.getMessage());
 		}
 	}
 }
