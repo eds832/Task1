@@ -90,7 +90,7 @@ public class DataParserTest {
 	}
 
 	@Test
-	public void parseDataExeption1Test() {
+	public void parseDataException1Test() {
 		ArrayList<String> ar = null;
 		try {
 			DataParser.parseData(ar);
@@ -101,7 +101,7 @@ public class DataParserTest {
 	}
 
 	@Test
-	public void parseDataExeption2Test() {
+	public void parseDataException2Test() {
 		ArrayList<String> ar = new ArrayList<>();
 		try {
 			DataParser.parseData(ar);

@@ -85,7 +85,7 @@ public class TriangleCreatorTest {
 	}
 
 	@Test
-	public void parseTriangleCreatorExeption1Test() {
+	public void parseTriangleCreatorException1Test() {
 		ArrayList<double[]> pars = null;
 		try {
 			TriangleCreator.createTriangle(pars);
@@ -96,7 +96,7 @@ public class TriangleCreatorTest {
 	}
 
 	@Test
-	public void parseTriangleCreatorExeption2Test() {
+	public void parseTriangleCreatorException2Test() {
 		ArrayList<double[]> pars = new ArrayList<>();
 		try {
 			TriangleCreator.createTriangle(pars);
