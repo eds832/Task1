@@ -61,7 +61,6 @@ public class TriangleCreatorTest {
 		parsedData.add(m3);
 		Performer instance = Performer.getInstance();
 		tr = instance.getArrayTriangle();
-		Performer.getInstance().getArrayTriangle();
 		tr.clear();
 	}
 
