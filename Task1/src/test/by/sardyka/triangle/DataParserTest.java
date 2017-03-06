@@ -68,7 +68,7 @@ public class DataParserTest {
 	}
 
 	@Test
-	public void parseDateTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
+	public void parseDataTest() throws WrongDataException, IndexOutOfBoundsException, NullPointerException {
 		ArrayList<double[]> masList = DataParser.parseData(ar1);
 		boolean b1 = ar2.size() == masList.size();
 		boolean b2 = masList.get(0).length == ar2.get(0).length;
