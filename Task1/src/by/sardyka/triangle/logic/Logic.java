@@ -11,10 +11,10 @@ public class Logic {
 		BigDecimal ab = calculateSqSide(triangle.getA(), triangle.getB());
 		BigDecimal bc = calculateSqSide(triangle.getB(), triangle.getC());
 		BigDecimal ac = calculateSqSide(triangle.getA(), triangle.getC());
-		Double ab_d = Math.sqrt(new Double(ab.toString()));
-		Double bc_d = Math.sqrt(new Double(bc.toString()));
-		Double ac_d = Math.sqrt(new Double(ac.toString()));
-		double perimeter = ab_d + bc_d + ac_d;
+		Double abD = Math.sqrt(new Double(ab.toString()));
+		Double bcD = Math.sqrt(new Double(bc.toString()));
+		Double acD = Math.sqrt(new Double(ac.toString()));
+		double perimeter = abD + bcD + acD;
 		return perimeter;
 	}
 

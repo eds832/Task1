@@ -24,9 +24,11 @@ public class DataReader {
 			}
 		} catch (FileNotFoundException e) {
 			LOG.log(Level.FATAL, "There isn't the file " + source);
+			throw new RuntimeException();
 
 		} catch (IOException e) {
 			LOG.log(Level.FATAL, "There is a input-output problem with " + source);
+			throw new RuntimeException();
 
 		} finally {
 			if (stream != null) {
